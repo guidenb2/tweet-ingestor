@@ -1,1 +1,2 @@
-tweet-ingestor-env
+# Ignore virtual environment directory
+tweet-ingestor-env/
