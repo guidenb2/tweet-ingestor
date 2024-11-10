@@ -18,4 +18,4 @@ curl -X POST "http://0.0.0.0:8001/" \
         "geo": null,
         "coordinates": null,
         "place": null
-    }'
+    }' -v
