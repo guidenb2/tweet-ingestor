@@ -1,8 +1,8 @@
 import socket
 from confluent_kafka import Producer
 
-def init_producer():
-    conf = {'bootstrap.servers': 'localhost:9093',
+def init_producer(config):
+    conf = {'bootstrap.servers': config["bootstrap_server"],
             'client.id': socket.gethostname()}
     return Producer(conf)
 
