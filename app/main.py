@@ -1,4 +1,4 @@
-from typing import Optional
+from prometheus_fastapi_instrumentator import Instrumentator 
 from fastapi import FastAPI, HTTPException
 from app.models import Tweet
 from app.kafka import acked, init_producer
@@ -6,6 +6,7 @@ from app.config import read_config
 
 
 app=FastAPI()
+Instrumentator().instrument(app).expose(app)
 config = read_config()
 producer = init_producer(config)
 

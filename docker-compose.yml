@@ -44,6 +44,14 @@ services:
         target: /create-topic.sh
     networks:
       - kafka-net
+  
+  prometheus:
+    image: prom/prometheus:v3.0.0
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - "./resources/prometheus.yml:/etc/prometheus/prometheus.yml"
 
 networks:
   kafka-net:
